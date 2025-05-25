@@ -75,17 +75,17 @@ public class StarforceSimulatorOld {
 
         // 打印结果
         System.out.println("星力模拟报告 (" + totalSimulations + " 次模拟)");
-        System.out.println("从 " + startingStar + "星 升级到 " + targetStar + "星");
-        System.out.println("===================================");
+        System.out.println("===================================================================");
 
-        System.out.println("星级\t达成次数\t平均所需装备数量");
-        System.out.println("-----------------------------------");
+        System.out.printf("%-6s%-8s%-9s%-8s%n", "星级", "达成次数", "使用的装备数量", "平均所需装备数量");
+        System.out.println("===================================================================");
 
         for (int i = startingStar + 1; i <= targetStar; i++) {
-            System.out.println(i + "星\t" + reachedStars[i] + "\t\t" + df.format(equipmentUsed[i] / (double) reachedStars[i]));
+            System.out.printf("%-6s%-12d%-18d%-16s%n",
+                    i + "星",
+                    reachedStars[i],
+                    equipmentUsed[i],
+                    df.format(equipmentUsed[i] / (double) reachedStars[i]));
         }
-
-        System.out.println("每个目标星级使用的装备数量：" + Arrays.toString(equipmentUsed));
-
     }
 }
