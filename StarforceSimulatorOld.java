@@ -1,5 +1,3 @@
-package com.tuan.testcode;
-
 import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Random;
@@ -12,7 +10,7 @@ public class StarforceSimulatorOld {
         int startingStar = 17;
         int targetStar = 25;
 
-        // 从表格中提取的概率
+        // 上星概率
         double[] successRate = {
                 0.30, // 17->18
                 0.30, // 18->19
@@ -39,8 +37,7 @@ public class StarforceSimulatorOld {
         int[] reachedStars = new int[targetStar + 1];
         // 记录每个星级达成的所使用的装备数量
         int[] equipmentUsed = new int[targetStar + 1];
-        // 统计数据
-
+        
         Random random = new Random();
         DecimalFormat df = new DecimalFormat("#.##");
 
