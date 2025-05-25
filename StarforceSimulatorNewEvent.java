@@ -1,5 +1,3 @@
-package com.tuan.testcode;
-
 import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Random;
@@ -12,7 +10,8 @@ public class StarforceSimulatorNewEvent {
         int startingStar = 18;
         int targetStar = 30;
 
-        // 从表格中提取的概率
+        // 上星概率
+        // 成功概率
         double[] successRate = {
                 0.15, // 18->19
                 0.15, // 19->20
@@ -28,6 +27,7 @@ public class StarforceSimulatorNewEvent {
                 0.01  // 29->30
         };
 
+        // 失败概率
         double[] keepRate = {
                 0.8024, // 18->19 失败但保持
                 0.7905, // 19->20 失败但保持
@@ -87,8 +87,7 @@ public class StarforceSimulatorNewEvent {
         for (int i = startingStar + 1; i <= targetStar; i++) {
             System.out.println(i + "星\t" + reachedStars[i] + "\t\t" + df.format(equipmentUsed[i] / (double) reachedStars[i]));
         }
-
+        
         System.out.println("每个目标星级使用的装备数量：" + Arrays.toString(equipmentUsed));
-
     }
 }
